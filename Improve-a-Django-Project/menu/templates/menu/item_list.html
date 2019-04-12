@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block content %}
+    {% for item in items %}
+        <div>
+            <h3><a href="{% url 'menu:item_detail' pk=item.pk %}">{{ item.item_name }}</a></h3>
+            <h4><p>{{ item.description|linebreaks }}</p></h4>
+            <p>published: {{ item.published_date }}</p>
+        </div>
+        <br>
+    {% endfor %}
+{% endblock %}

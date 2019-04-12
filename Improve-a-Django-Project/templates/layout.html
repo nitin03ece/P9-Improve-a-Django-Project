@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Soda Fountain</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+        <div class="page-header" style="display: flex; padding-left: 220px;">
+            {% if user.is_authenticated %}
+                <h3 style=""><a href="{% url 'menu:menu_new' %}" class=""><span class="glyphicon glyphicon-plus"></span></a></h3>
+            {% endif %}
+            <h2 style="padding-left: 50px;"><a href="{% url 'home' %}">Soda Fountain</a></h2>
+            <h2 style="padding-left: 50px;"><a href="{% url 'menu:menu_list' %}">Menu List</a></h2>
+            <h2 style="padding-left: 50px;"><a href="{% url 'menu:item_list' %}">Item List</a></h2>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% block content %}
+
+                    {% endblock %}
+				</div>
+            </div>
+        </div>
+    </body>
+</html>
